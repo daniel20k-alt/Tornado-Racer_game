@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var dustParticles: SKEmitterNode!
     var player: SKSpriteNode!
     var scoreLabel: SKLabelNode!
@@ -44,6 +44,9 @@ class GameScene: SKScene {
         addChild(scoreLabel)
         
         score = 0
+        
+        physicsWorld.gravity = .zero
+        physicsWorld.contactDelegate = self
 
     }
 
