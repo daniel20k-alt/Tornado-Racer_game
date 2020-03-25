@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		EE4A6BC5242B2AC30057B72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A6BC4242B2AC30057B72D /* AppDelegate.swift */; };
 		EE4A6BC7242B2AC30057B72D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BC6242B2AC30057B72D /* GameScene.sks */; };
-		EE4A6BC9242B2AC30057B72D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BC8242B2AC30057B72D /* Actions.sks */; };
 		EE4A6BCB242B2AC30057B72D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A6BCA242B2AC30057B72D /* GameScene.swift */; };
 		EE4A6BCD242B2AC30057B72D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4A6BCC242B2AC30057B72D /* GameViewController.swift */; };
 		EE4A6BD0242B2AC30057B72D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BCE242B2AC30057B72D /* Main.storyboard */; };
 		EE4A6BD2242B2AC80057B72D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BD1242B2AC80057B72D /* Assets.xcassets */; };
 		EE4A6BD5242B2AC80057B72D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BD3242B2AC80057B72D /* LaunchScreen.storyboard */; };
+		EE4A6BDD242B37260057B72D /* collision.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BDC242B37250057B72D /* collision.sks */; };
+		EE4A6BDF242B373A0057B72D /* dustParticles.sks in Resources */ = {isa = PBXBuildFile; fileRef = EE4A6BDE242B373A0057B72D /* dustParticles.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EE4A6BC1242B2AC30057B72D /* Tornado Racer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tornado Racer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4A6BC4242B2AC30057B72D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE4A6BC6242B2AC30057B72D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		EE4A6BC8242B2AC30057B72D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		EE4A6BCA242B2AC30057B72D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EE4A6BCC242B2AC30057B72D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EE4A6BCF242B2AC30057B72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE4A6BD1242B2AC80057B72D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE4A6BD4242B2AC80057B72D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE4A6BD6242B2AC80057B72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE4A6BDC242B37250057B72D /* collision.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = collision.sks; sourceTree = "<group>"; };
+		EE4A6BDE242B373A0057B72D /* dustParticles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = dustParticles.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,14 @@
 			children = (
 				EE4A6BC4242B2AC30057B72D /* AppDelegate.swift */,
 				EE4A6BC6242B2AC30057B72D /* GameScene.sks */,
-				EE4A6BC8242B2AC30057B72D /* Actions.sks */,
 				EE4A6BCA242B2AC30057B72D /* GameScene.swift */,
 				EE4A6BCC242B2AC30057B72D /* GameViewController.swift */,
 				EE4A6BCE242B2AC30057B72D /* Main.storyboard */,
 				EE4A6BD1242B2AC80057B72D /* Assets.xcassets */,
 				EE4A6BD3242B2AC80057B72D /* LaunchScreen.storyboard */,
 				EE4A6BD6242B2AC80057B72D /* Info.plist */,
+				EE4A6BDC242B37250057B72D /* collision.sks */,
+				EE4A6BDE242B373A0057B72D /* dustParticles.sks */,
 			);
 			path = "Tornado Racer";
 			sourceTree = "<group>";
@@ -131,11 +134,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4A6BDD242B37260057B72D /* collision.sks in Resources */,
 				EE4A6BD0242B2AC30057B72D /* Main.storyboard in Resources */,
 				EE4A6BC7242B2AC30057B72D /* GameScene.sks in Resources */,
 				EE4A6BD2242B2AC80057B72D /* Assets.xcassets in Resources */,
+				EE4A6BDF242B373A0057B72D /* dustParticles.sks in Resources */,
 				EE4A6BD5242B2AC80057B72D /* LaunchScreen.storyboard in Resources */,
-				EE4A6BC9242B2AC30057B72D /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +306,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MeerkatWorks.Tornado-Racer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -320,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.MeerkatWorks.Tornado-Racer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
