@@ -52,8 +52,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.gravity = .zero
         physicsWorld.contactDelegate = self
         
-        //creates enemies every 0.4 seconds
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        //creates enemies every 0.8 second
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
         
     }
     
@@ -97,7 +97,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.position = location
     }
     
-    
-    
-    
-}
+    func didBegin(_ contact: SKPhysicsContact) {
+        let collision = SKEmitterNode(fileNamed: "collision")!
+        collision.position = player.position
+        addChild(collision)
+        
+        player.removeFromParent()
+        isGameOver = true
+            
+        }
+    }
