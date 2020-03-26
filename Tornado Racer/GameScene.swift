@@ -18,11 +18,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameTimer: Timer?
     var isGameOver = false
     
-    var score =  0 {
-        didSet {
-            scoreLabel.text = "Score: \(score)"
+        var score =  0 {
+            didSet {
+                scoreLabel.text = "Score: \(score)"
+            }
         }
-    }
     
     override func didMove(to view: SKView) {
         
@@ -53,7 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         //creates enemies every 0.8 second
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.6, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
         
     }
     
@@ -78,10 +78,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if node.position.x < -300 {
                 node.removeFromParent()
             }
+            
+            
         }
         
         if !isGameOver {
             score += 1
+
         }
     }
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -95,8 +98,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         player.position = location
+
     }
     
+
     func didBegin(_ contact: SKPhysicsContact) {
         let collision = SKEmitterNode(fileNamed: "collision")!
         collision.position = player.position
@@ -104,6 +109,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player.removeFromParent()
         isGameOver = true
-            
+        gameTimer?.invalidate()
+
         }
     }
