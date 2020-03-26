@@ -17,13 +17,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var possibleEnemies = ["house", "ball", "tree"]
     var gameTimer: Timer?
     var isGameOver = false
-
+    
     var score =  0 {
-    didSet {
-    scoreLabel.text = "Score: \(score)"
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
     }
-    }
-
+    
     override func didMove(to view: SKView) {
         
         backgroundColor = .black
@@ -56,7 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameTimer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector: #selector(createEnemy), userInfo: nil, repeats: true)
         
     }
-
+    
     @objc func createEnemy() {
         guard let enemy = possibleEnemies.randomElement() else { return }
         
@@ -71,9 +71,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         sprite.physicsBody?.linearDamping = 0
         sprite.physicsBody?.angularDamping = 0
     }
-
+    
     override func update(_ currentTime: TimeInterval) {
-
+        
         for node in children {
             if node.position.x < -300 {
                 node.removeFromParent()
@@ -83,6 +83,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if !isGameOver {
             score += 1
         }
-  
     }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        var location = touch.location(in: self)
+        
+        if location.y < 100 {
+            location.y = 100
+        } else if location.y > 668 {
+            location.y = 668
+        }
+        
+        player.position = location
+    }
+    
+    
+    
+    
 }
